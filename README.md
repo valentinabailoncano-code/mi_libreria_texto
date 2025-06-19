@@ -92,4 +92,6 @@ pip install -r requirements.txt
 
 **Valentina Bailón Cano**  
 📎 [LinkedIn](https://www.linkedin.com/in/valentina-bailon-2653b22b7/)  
+🔗 [Ver repositorio en GitHub](https://github.com/valentinabailoncano-code/MASTER-EVOLVE-MODULO-2)  
+🌐 [Abrir app en Streamlit Cloud](https://valentinabailoncano-master-evolve-modulo-2.streamlit.app/)
 
