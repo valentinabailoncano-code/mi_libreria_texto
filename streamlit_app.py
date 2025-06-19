@@ -6,13 +6,6 @@ import pandas as pd
 import seaborn as sns
 import sys
 import os
-import nltk
-
-# Forzar descarga de stopwords si no existen (para Streamlit Cloud)
-try:
-    nltk.data.find('corpora/stopwords')
-except LookupError:
-    nltk.download('stopwords')
 
 # Añadir ruta del paquete manualmente para Streamlit Cloud
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), 'MASTER-EVOLVE-MODULO-2')))
