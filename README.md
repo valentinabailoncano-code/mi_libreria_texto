@@ -1,22 +1,50 @@
 # 🧹 mi_libreria_texto
 
-Librería Python sencilla para limpiar y analizar texto.  
-📘 Desarrollado como parte del **Módulo 2 del Máster en Data Science & IA — Evolve**.
+Librería Python desarrollada en el marco del Máster en Data Science & IA de Evolve.  
+Ofrece funciones de procesamiento y análisis léxico de texto con visualización de frecuencias, soporte multilenguaje y limpieza avanzada.
 
 ---
 
-## 🚀 Funcionalidades
+## 🚀 Funcionalidades principales
 
-- 🔡 **Limpieza de texto**  
-  Convierte el texto a minúsculas, elimina símbolos y normaliza espacios.
+- 🔡 **Limpieza del texto**  
+  Convierte a minúsculas, elimina símbolos y espacios innecesarios.
+
+- 🌍 **Detección automática del idioma**  
+  Identifica si el texto está en español, inglés, etc.
+
+- 🧹 **Eliminación de stopwords**  
+  Elimina palabras vacías como “el”, “de”, “and”, etc. según el idioma detectado.
+
 - 🧮 **Conteo de palabras**  
-  Devuelve la cantidad total de palabras.
+  Calcula el número total de palabras significativas.
+
 - 📊 **Frecuencia de palabras**  
-  Devuelve un conteo de cuántas veces aparece cada palabra.
+  Calcula cuántas veces aparece cada palabra y las visualiza en un gráfico de barras.
 
 ---
 
-## 📦 Instalación
+## 🧪 Ejemplo de uso
 
-```bash
-pip install .
+```python
+from mi_libreria_texto import (
+    limpiar_texto,
+    detectar_idioma,
+    eliminar_stopwords,
+    contar_palabras,
+    frecuencia_palabras
+)
+
+texto = "¡Hola Mundo! Esto es un ejemplo de texto."
+
+idioma = detectar_idioma(texto)
+texto_limpio = limpiar_texto(texto)
+texto_filtrado = eliminar_stopwords(texto_limpio, idioma)
+conteo = contar_palabras(texto_filtrado)
+frecuencias = frecuencia_palabras(texto_filtrado)
+
+print(f"Idioma: {idioma}")
+print(f"Texto limpio: {texto_limpio}")
+print(f"Texto sin stopwords: {texto_filtrado}")
+print(f"Número de palabras: {conteo}")
+print(f"Frecuencias: {frecuencias}")
