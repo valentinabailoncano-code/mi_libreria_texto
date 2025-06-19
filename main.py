@@ -7,4 +7,3 @@ if __name__ == "__main__":
     print(f"Texto limpio: {texto_limpio}")
     print(f"Cantidad de palabras: {contar_palabras(texto_limpio)}")
     print(f"Frecuencia de palabras: {frecuencia_palabras(texto_limpio)}")
-
