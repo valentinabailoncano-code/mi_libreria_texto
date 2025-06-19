@@ -10,36 +10,40 @@
 from collections import Counter
 from langdetect import detect
 import nltk
+from nltk.corpus import stopwords
 
-# Forzar descarga de stopwords si no están (para Streamlit Cloud)
+# ✅ Forzar descarga de 'stopwords' si no están (para Streamlit Cloud)
 try:
     nltk.data.find('corpora/stopwords')
 except LookupError:
     nltk.download('stopwords')
 
-def contar_palabras(texto):
-    palabras = texto.split()  # Divide el texto por espacios
-    return len(palabras)  # Devuelve cuántas palabras hay
-
-def frecuencia_palabras(texto):
-    palabras = texto.split()  # Divide el texto en palabras
-    return Counter(palabras)  # Devuelve diccionario con frecuencia de cada palabra
-
-def eliminar_stopwords(texto, idioma='spanish'):
-    """
-    Elimina palabras vacías (como "de", "el", "y") según el idioma.
-    Usa las stopwords definidas por la librería nltk.
-    """
-    from nltk.corpus import stopwords
-
-    palabras = texto.split()
-    stop_words = set(stopwords.words(idioma))
-    filtradas = [palabra for palabra in palabras if palabra not in stop_words]
-    return ' '.join(filtradas)
-
 def detectar_idioma(texto):
     """
-    Detecta automáticamente el idioma de un texto usando langdetect.
-    Devuelve un código de idioma como 'es', 'en', etc.
+    Detecta el idioma de un texto usando langdetect.
     """
     return detect(texto)
+
+def eliminar_stopwords(texto, idioma):
+    """
+    Elimina las stopwords según el idioma detectado.
+    """
+    if idioma not in stopwords.fileids():
+        idioma = 'english'  # fallback seguro
+    stop_words = set(stopwords.words(idioma))
+    palabras = texto.split()
+    palabras_filtradas = [palabra for palabra in palabras if palabra not in stop_words]
+    return " ".join(palabras_filtradas)
+
+def contar_palabras(texto):
+    """
+    Cuenta el número de palabras significativas en el texto.
+    """
+    return len(texto.split())
+
+def frecuencia_palabras(texto):
+    """
+    Devuelve la frecuencia de cada palabra en un texto como diccionario.
+    """
+    palabras = texto.split()
+    return dict(Counter(palabras))
