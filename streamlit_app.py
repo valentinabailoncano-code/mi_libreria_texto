@@ -6,6 +6,13 @@ import pandas as pd
 import seaborn as sns
 import sys
 import os
+import nltk
+
+# Forzar descarga de stopwords si no existen (para Streamlit Cloud)
+try:
+    nltk.data.find('corpora/stopwords')
+except LookupError:
+    nltk.download('stopwords')
 
 # Añadir ruta del paquete manualmente para Streamlit Cloud
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), 'MASTER-EVOLVE-MODULO-2')))
@@ -60,16 +67,18 @@ if texto_usuario:
             fig_bar, ax = plt.subplots(figsize=(10, 4))
             ax.bar(df_frec["Palabra"].head(10), df_frec["Frecuencia"].head(10), color="skyblue")
             ax.set_ylabel("Frecuencia")
-            plt.xticks(rotation=45)
+            plt.xticks(rotation=45, ha='right')
             plt.tight_layout()
             st.pyplot(fig_bar)
 
             # Gráfico de dispersión
             st.subheader("🔎 Diagrama de dispersión")
-            fig_scatter, ax2 = plt.subplots()
+            fig_scatter, ax2 = plt.subplots(figsize=(12, 5))
             ax2.scatter(df_frec["Palabra"], df_frec["Frecuencia"], color="purple")
             ax2.set_ylabel("Frecuencia")
-            ax2.set_xticklabels(df_frec["Palabra"], rotation=45)
+            ax2.set_xticks(range(len(df_frec["Palabra"])))
+            ax2.set_xticklabels(df_frec["Palabra"], rotation=65, ha='right', fontsize=8)
+            plt.tight_layout()
             st.pyplot(fig_scatter)
 
             # Tabla
