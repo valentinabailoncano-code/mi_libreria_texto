@@ -1,12 +1,12 @@
-# streamlit_app.py - Visualización web para mi_libreria_texto
+# streamlit_app.py - Visualización web para MASTER-EVOLVE-MODULO-2
 
 import streamlit as st
 from mi_libreria_texto import limpiar_texto, detectar_idioma, eliminar_stopwords, contar_palabras, frecuencia_palabras
 import matplotlib.pyplot as plt
 
 # Configuración inicial de la página
-st.set_page_config(page_title="mi_libreria_texto", layout="centered")
-st.title("🧹 Análisis de Texto con mi_libreria_texto")
+st.set_page_config(page_title="MASTER-EVOLVE-MODULO-2", layout="centered")
+st.title("🧹 Análisis de Texto — MASTER-EVOLVE-MODULO-2")
 
 st.markdown("""
 Esta aplicación web analiza tu texto ingresado y te muestra:
@@ -52,3 +52,4 @@ if texto_usuario:
             st.info("No se encontraron palabras significativas tras la limpieza y filtrado.")
 else:
     st.info("Introduce un texto para comenzar el análisis.")
+
