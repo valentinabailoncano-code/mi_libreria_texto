@@ -7,11 +7,11 @@
 # - eliminar_stopwords: elimina palabras vacías como "el", "de", "y" (usando nltk)
 # - detectar_idioma: intenta detectar automáticamente el idioma del texto
 
-import nltk
 from collections import Counter
 from langdetect import detect
+import nltk
 
-# Asegura que el paquete de stopwords esté disponible
+# Forzar descarga de stopwords si no están (para Streamlit Cloud)
 try:
     nltk.data.find('corpora/stopwords')
 except LookupError:
