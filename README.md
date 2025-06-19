@@ -7,7 +7,7 @@ Ofrece funciones de procesamiento y análisis léxico de texto con visualizació
 
 ## 🚀 Funcionalidades principales
 
-- 🔡 **Limpieza del texto**  
+- 🔤 **Limpieza del texto**  
   Convierte a minúsculas, elimina símbolos y espacios innecesarios.
 
 - 🌍 **Detección automática del idioma**  
@@ -48,3 +48,45 @@ print(f"Texto limpio: {texto_limpio}")
 print(f"Texto sin stopwords: {texto_filtrado}")
 print(f"Número de palabras: {conteo}")
 print(f"Frecuencias: {frecuencias}")
+```
+
+---
+
+## 📁 Estructura del proyecto
+
+```
+mi_libreria_texto/
+├── mi_libreria_texto/
+│   ├── __init__.py
+│   ├── limpieza.py
+│   └── analisis.py
+├── tests/
+│   ├── test_limpieza.py
+│   └── test_analisis.py
+├── main.py
+├── requirements.txt
+├── setup.py
+└── README.md
+```
+
+---
+
+## 🔗 Requisitos
+
+- `nltk`
+- `langdetect`
+- `matplotlib`
+- `pytest`
+
+Instala todo fácilmente con:
+
+```bash
+pip install -r requirements.txt
+```
+
+---
+
+## 👩‍💻 Autora
+
+**Valentina Bailón Cano**  
+📎 [LinkedIn](https://www.linkedin.com/in/valentina-bailon-2653b22b7/)  
