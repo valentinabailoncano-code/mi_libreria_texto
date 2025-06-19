@@ -1,4 +1,11 @@
 # streamlit_app.py - Visualización web para MASTER-EVOLVE-MODULO-2
+import nltk
+
+# Para evitar error en Streamlit Cloud, fuerza descarga si no existe
+try:
+    nltk.data.find('corpora/stopwords')
+except LookupError:
+    nltk.download('stopwords')
 
 import streamlit as st
 import matplotlib.pyplot as plt
