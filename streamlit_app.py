@@ -1,10 +1,18 @@
 # streamlit_app.py - Visualización web para MASTER-EVOLVE-MODULO-2
 
 import streamlit as st
-from mi_libreria_texto import limpiar_texto, detectar_idioma, eliminar_stopwords, contar_palabras, frecuencia_palabras
 import matplotlib.pyplot as plt
 import pandas as pd
 import seaborn as sns
+import sys
+import os
+
+# Añadir ruta del paquete manualmente para Streamlit Cloud
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), 'MASTER-EVOLVE-MODULO-2')))
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), 'mi_libreria_texto')))
+
+from limpieza import limpiar_texto
+from analisis import detectar_idioma, eliminar_stopwords, contar_palabras, frecuencia_palabras
 
 # Configuración inicial de la página
 st.set_page_config(page_title="MASTER-EVOLVE-MODULO-2", layout="centered")
@@ -72,5 +80,6 @@ if texto_usuario:
             st.info("No se encontraron palabras significativas tras la limpieza y filtrado.")
 else:
     st.info("Introduce un texto para comenzar el análisis.")
+
 
 
