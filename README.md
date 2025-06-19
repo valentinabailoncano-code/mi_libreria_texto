@@ -63,7 +63,8 @@ mi_libreria_texto/
 ├── tests/
 │   ├── test_limpieza.py
 │   └── test_analisis.py
-├── main.py
+├── main.py 
+├── streamlit_app.py
 ├── requirements.txt
 ├── setup.py
 └── README.md
@@ -73,6 +74,7 @@ mi_libreria_texto/
 
 ## 🔗 Requisitos
 
+- `streamlit`
 - `nltk`
 - `langdetect`
 - `matplotlib`
