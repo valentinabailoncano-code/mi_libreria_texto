@@ -1,4 +1,4 @@
-# 🧹 mi_libreria_texto
+# 🧹 MASTER-EVOLVE-MODULO-2
 
 Librería Python desarrollada en el marco del Máster en Data Science & IA de Evolve.  
 Ofrece funciones de procesamiento y análisis léxico de texto con visualización de frecuencias, soporte multilenguaje y limpieza avanzada.
@@ -55,7 +55,7 @@ print(f"Frecuencias: {frecuencias}")
 ## 📁 Estructura del proyecto
 
 ```
-mi_libreria_texto/
+MASTER-EVOLVE-MODULO-2/
 ├── mi_libreria_texto/
 │   ├── __init__.py
 │   ├── limpieza.py
@@ -63,7 +63,7 @@ mi_libreria_texto/
 ├── tests/
 │   ├── test_limpieza.py
 │   └── test_analisis.py
-├── main.py 
+├── main.py
 ├── streamlit_app.py
 ├── requirements.txt
 ├── setup.py
@@ -74,11 +74,11 @@ mi_libreria_texto/
 
 ## 🔗 Requisitos
 
-- `streamlit`
 - `nltk`
 - `langdetect`
 - `matplotlib`
 - `pytest`
+- `streamlit`
 
 Instala todo fácilmente con:
 
@@ -92,3 +92,4 @@ pip install -r requirements.txt
 
 **Valentina Bailón Cano**  
 📎 [LinkedIn](https://www.linkedin.com/in/valentina-bailon-2653b22b7/)  
+
