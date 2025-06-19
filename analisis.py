@@ -12,7 +12,7 @@ from langdetect import detect
 import nltk
 from nltk.corpus import stopwords
 
-# ✅ Forzar descarga de 'stopwords' si no están (para Streamlit Cloud)
+# Forzar descarga de 'stopwords' si no están (para Streamlit Cloud)
 try:
     nltk.data.find('corpora/stopwords')
 except LookupError:
